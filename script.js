@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const outputDiv = document.getElementById('creature-output');
         if (creature) {
             outputDiv.innerHTML = `<h2>Generated Creature: ${creature.replace(/_/g, ' ')}</h2>
-                                   <img.src="images/${creature}.png" alt="${creature}">`;
+                                   <img src="images/${creature}.png" alt="${creature}">`;
         } else {
             outputDiv.innerHTML = `<p>The combination of ingredients does not match any creature, if you use it you will get a Drogdor or Neyon randomly.</p>`;
         }
