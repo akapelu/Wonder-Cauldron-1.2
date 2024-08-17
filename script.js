@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const outputDiv = document.getElementById('creature-output');
         if (creature) {
             outputDiv.innerHTML = `<h2>Generated Creature: ${creature.replace(/_/g, ' ')}</h2>
-                                   <img src="images/${creature}.png" alt="${creature}">`;
+                                   <img src="/Wonder-Cauldron-1.0/images/${creature}.png" alt="${creature}">`;
         } else {
             outputDiv.innerHTML = `<p>The combination of ingredients you have chosen does not belong to any recipe. Using them will spawn a random Drogdor or Neyon.</p>`;
         }
