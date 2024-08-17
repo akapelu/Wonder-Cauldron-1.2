@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         selectedIngredients = randomCombination;
-        updateSelectedIngredients();
+       
 
         // Display the modal with random ingredients
         const modal = document.getElementById('randomModal');
