@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             outputDiv.innerHTML = `<h2>Generated Creature: ${creature.replace(/_/g, ' ')}</h2>
                                    <img src="images/${creature}.png" alt="${creature}">`;
         } else {
-            outputDiv.innerHTML = `<p>No matching creature found.</p>`;
+            outputDiv.innerHTML = `<p>The combination of ingredients you have chosen does not belong to any recipe. Using them will spawn a random Drogdor or Neyon.</p>`;
         }
     });
 
