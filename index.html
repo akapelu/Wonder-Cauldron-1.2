@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creature Combinator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Creature Combinator</h1>
+    <div id="ingredient-buttons"></div>
+    <ul id="selected-ingredients"></ul>
+    <button id="generate-creature">Generate Creature</button>
+    <button id="generate-random">Generate Random Combination</button>
+    <button id="reset">Reset</button>
+    <div id="creature-output"></div>
+
+    <!-- Modal for Random Ingredients -->
+    <div id="randomModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Random Ingredient Combination</h2>
+            <div id="random-ingredients" class="random-ingredients"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
