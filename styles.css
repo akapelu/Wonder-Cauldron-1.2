@@ -9,7 +9,15 @@ body {
 h1 {
     color: #333;
 }
+/* CSS: Estilos para el contenedor de ingredientes seleccionados */
+#selected-ingredients-container {
+    margin-top: 20px;
+}
 
+#selected-ingredients-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 #ingredient-buttons img {
     width: 100px;
     height: 100px;
