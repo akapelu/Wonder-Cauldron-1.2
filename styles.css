@@ -11,18 +11,30 @@ h1 {
 }
 /* CSS: Estilos para el contenedor de ingredientes seleccionados */
 #selected-ingredients-container {
-    margin-top: 20px; /* Espacio superior para separar de otros elementos */
+    background-color: #FFDAB9; /* Color naranja claro (Peach Puff) */
+    padding: 20px; /* Espacio interno para separar el contenido del borde */
+    margin-top: 20px; /* Espacio superior para separar del resto del contenido */
+    border-radius: 8px; /* Esquinas redondeadas opcional */
+    border: 1px solid #FFB06A; /* Borde opcional para destacar */
 }
 
 /* Estilo para el título de los ingredientes seleccionados */
 #selected-ingredients-title {
     font-weight: bold; /* Hacer el texto en negrita */
-    margin-bottom: 20px; /* Espacio entre el título y la lista */
+    margin-bottom: 10px; /* Espacio entre el título y la lista */
+    color: #FF6F00; /* Color del texto del título opcional */
 }
 
 /* Estilo para la lista de ingredientes seleccionados */
 #selected-ingredients {
     margin-top: 10px; /* Espacio superior opcional para la lista */
+}
+
+/* Estilos opcionales para la lista */
+#selected-ingredients li {
+    list-style-type: none; /* Eliminar viñetas */
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+    color: #333; /* Color del texto de los ingredientes opcional */
 }
 #ingredient-buttons img {
     width: 100px;
