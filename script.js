@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const ingredients = [
         "Elemental_Soul", "Quimeric_Essence", "Mandrake_Root", "Griffin_Feather", "Basilisc_Eye", 
         "Siren_Tear", "Golem_Heart", "Fenix_Flower", "Star_Dust", "Dragon_Scale"
@@ -151,22 +151,16 @@ const creatureSkills = {
 
         const outputDiv = document.getElementById('creature-output');
         if (creature) {
-            outputDiv.innerHTML = `<h2>Generated Creature: ${creature.replace(/_/g, ' ')}</h2>
-                                   <img src="images/${creature}.png" alt="${creature}">`;
+            const creatureName = creature.replace(/_/g, ' ');
+            const creatureImg = `<img src="images/${creature}.png" alt="${creatureName}">`;
+            const creatureSkill = creatureSkills[creature];
+            outputDiv.innerHTML = `<h2>Generated Creature: ${creatureName}</h2>
+                                   ${creatureImg}
+                                   <p>Skill: ${creatureSkill}</p>`;
         } else {
             outputDiv.innerHTML = `<p>The combination of ingredients you have chosen does not belong to any recipe. 
             Using them will spawn a random Drogdor or Neyon.</p>`;
         }
-        
-          // Obtener la habilidad de la criatura generada
-    const creatureSkill = creatureSkills[generatedCreature];
-
-    // Mostrar la habilidad debajo de la imagen de la criatura
-    const creatureSkillElement = document.getElementById("creature-skill");
-    creatureSkillElement.innerText = creatureSkill;
-
-    // Mostrar el contenedor de la criatura y su habilidad (en caso de que esté oculto)
-    document.getElementById("creature-container").style.display = "block";
          
     });
 
