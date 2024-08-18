@@ -1,3 +1,4 @@
+/* Estilos generales del cuerpo */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -10,10 +11,7 @@ body {
     padding: 20px;
 }
 
-h1 {
-    color: #333;
-}
-
+/* Estilo para el logo */
 #logo-web {
     width: 200px; /* Ajusta el tamaño del logo según sea necesario */
     height: auto; /* Mantiene la proporción del logo */
@@ -21,7 +19,7 @@ h1 {
     margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
-/* CSS: Estilos para el contenedor de ingredientes seleccionados */
+/* Estilos para el contenedor de ingredientes seleccionados */
 #selected-ingredients-container {
     background-color: #007D51; /* Color fondo cuadro ingredientes */
     padding: 20px; /* Espacio interno para separar el contenido del borde */
@@ -49,6 +47,7 @@ h1 {
     color: #4A2450; /* Color del texto de los ingredientes opcional */
 }
 
+/* Estilos para los botones de selección de ingredientes */
 #ingredient-buttons img {
     width: 100px;
     height: 100px;
@@ -63,16 +62,7 @@ h1 {
     border-color: #007bff;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 5px 0;
-    font-weight: bold;
-}
-
+/* Estilos para los botones generales */
 button {
     margin: 10px;
     padding: 10px 20px;
@@ -89,6 +79,7 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Estilo para la salida de la criatura */
 #creature-output {
     margin-top: 20px;
 }
@@ -98,44 +89,23 @@ button:hover {
     height: 200px;
 }
 
-
-
-/* Close button */
-.close {
+/* Estilo para el botón de cerrar */
+.close, .close-skills {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
+    position: absolute; /* Posiciona el botón de cerrar dentro del modal */
+    top: 10px;
+    right: 10px;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
+.close:hover, .close-skills:hover {
+    color: #000;
     text-decoration: none;
-    cursor: pointer;
 }
 
-/* Style for random ingredients inside modal */
-.random-ingredients img {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-}
-
-/* Botón de Info Skills */
-#info-skills {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007D51;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón de Info Skills */
-}
-
-/* Estilo del modal */
+/* Estilos para los modales */
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed; /* Fijo en la pantalla */
@@ -151,87 +121,35 @@ button:hover {
 /* Contenido del modal */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* Centra el modal */
+    margin: 5% auto; /* Centra el modal vertical y horizontalmente */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px; /* Ancho máximo del modal */
-    border-radius: 10px; /* Esquinas redondeadas */
-}
-
-/* Botón de cierre */
-.close-skills {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#creature-skill {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
-}
-
-.close-skills:hover,
-.close-skills:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* Modals */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.6); /* Black with opacity */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* Center modal vertically and horizontally */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; /* Puede ser mayor o menor según el tamaño de la pantalla */
     max-width: 600px;
-    border-radius: 8px;
-    position: relative; /* Allows positioning of close button */
+    border-radius: 8px; /* Esquinas redondeadas */
+    position: relative; /* Permite posicionar el botón de cerrar dentro del modal */
 }
 
-/* Close button styles */
-.close, .close-skills {
-    color: #aaa;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute; /* Position relative to .modal-content */
-    top: 10px;
-    right: 10px;
-}
-
-.close:hover, .close-skills:hover {
-    color: #000;
-    text-decoration: none;
-}
-
-#creature-output img, #random-ingredients img {
+/* Estilo para los ingredientes aleatorios dentro del modal */
+.random-ingredients img {
     width: 100px;
     height: 100px;
     margin: 5px;
     display: inline-block;
 }
 
-/* Responsive Design */
+/* Estilo para la habilidad de la criatura */
+#creature-skill {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Diseño responsivo */
 @media screen and (max-width: 600px) {
     .modal-content {
-        width: 90%; /* Make modal width smaller on smaller screens */
-        margin: 10% auto; /* Adjust vertical centering */
+        width: 90%; /* Hace que el ancho del modal sea más pequeño en pantallas pequeñas */
+        margin: 10% auto; /* Ajusta el centrado vertical */
     }
 
     .close, .close-skills {
