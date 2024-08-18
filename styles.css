@@ -23,7 +23,7 @@ h1 {
 
 /* CSS: Estilos para el contenedor de ingredientes seleccionados */
 #selected-ingredients-container {
-    background-color: #FFDAB9; /* Color naranja claro (Peach Puff) */
+    background-color: #A11F00; /* Color fondo cuadro ingredientes */
     padding: 20px; /* Espacio interno para separar el contenido del borde */
     margin-top: 20px; /* Espacio superior para separar del resto del contenido */
     border-radius: 8px; /* Esquinas redondeadas opcional */
@@ -34,7 +34,7 @@ h1 {
 #selected-ingredients-title {
     font-weight: bold; /* Hacer el texto en negrita */
     margin-bottom: 10px; /* Espacio entre el título y la lista */
-    color: #FF6F00; /* Color del texto del título opcional */
+    color: #00A16F; /* Color del texto del título opcional */
 }
 
 /* Estilo para la lista de ingredientes seleccionados */
@@ -46,7 +46,7 @@ h1 {
 #selected-ingredients li {
     list-style-type: none; /* Eliminar viñetas */
     margin-bottom: 5px; /* Espacio entre elementos de la lista */
-    color: #333; /* Color del texto de los ingredientes opcional */
+    color: #4B2B58; /* Color del texto de los ingredientes opcional */
 }
 
 #ingredient-buttons img {
@@ -149,7 +149,7 @@ button:hover {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #007D51;
     color: white;
     border: none;
     border-radius: 5px;
