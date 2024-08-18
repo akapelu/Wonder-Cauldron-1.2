@@ -157,6 +157,17 @@ const creatureSkills = {
             outputDiv.innerHTML = `<p>The combination of ingredients you have chosen does not belong to any recipe. 
             Using them will spawn a random Drogdor or Neyon.</p>`;
         }
+        
+          // Obtener la habilidad de la criatura generada
+    const creatureSkill = creatureSkills[generatedCreature];
+
+    // Mostrar la habilidad debajo de la imagen de la criatura
+    const creatureSkillElement = document.getElementById("creature-skill");
+    creatureSkillElement.innerText = creatureSkill;
+
+    // Mostrar el contenedor de la criatura y su habilidad (en caso de que esté oculto)
+    document.getElementById("creature-container").style.display = "block";
+         
     });
 
     const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
