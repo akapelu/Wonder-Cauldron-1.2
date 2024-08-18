@@ -176,6 +176,26 @@ document.addEventListener('DOMContentLoaded', () => {
             resetProgram();
         }
      });
+    
+    // Abrir el modal de Info Skills
+document.getElementById('info-skills').addEventListener('click', () => {
+    const modal = document.getElementById('infoSkillsModal');
+    modal.style.display = "block";
+});
+
+// Cerrar el modal cuando se haga clic en la "X"
+document.querySelector('.close-skills').addEventListener('click', () => {
+    const modal = document.getElementById('infoSkillsModal');
+    modal.style.display = "none";
+});
+
+// Cerrar el modal cuando se haga clic fuera del contenido del modal
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('infoSkillsModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});
 
     // Reset all selections
     function resetProgram() {
