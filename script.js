@@ -109,24 +109,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Generate a random combination of ingredients excluding specific ones
-    document.getElementById('generate-random').addEventListener('click', () => {
-        const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
-        const filteredIngredients = ingredients.filter(ingr => !excludedIngredients.includes(ingr));
-
+    const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
+    const filteredIngredients = ingredients.filter(ingr => !excludedIngredients.includes(ingr));
+    
+    // Function to generate a combination of 4 unique ingredients
+    function generateRandomCombination() {
         let randomCombination = [];
-        do {
-            randomCombination = [];
-            while (randomCombination.length < 4) {
-                const randomIngr = filteredIngredients[Math.floor(Math.random() * filteredIngredients.length)];
-                if (!randomCombination.includes(randomIngr)) {
-                    randomCombination.push(randomIngr);
-                }
+        while (randomCombination.length < 4) {
+            const randomIngr = filteredIngredients[Math.floor(Math.random() * filteredIngredients.length)];
+            if (!randomCombination.includes(randomIngr)) {
+                randomCombination.push(randomIngr);
             }
-        } while (Object.values(recetasCriaturas).some(receta => 
-            receta.sort().toString() === randomCombination.sort().toString()
-        ));
+        }
+        return randomCombination;
+    }
 
+    // Function to check if a combination exists in recetasCriaturas
+    function isCombinationInRecetas(combination) {
+        const sortedCombo = combination.slice().sort().toString();
+        return Object.values(recetasCriaturas).some(receta => 
+            receta.slice().sort().toString() === sortedCombo
+        );
+    }
+
+    // Generate a random combination that is not in recetasCriaturas
+    function generateValidRandomCombination() {
+        let combination;
+        do {
+            combination = generateRandomCombination();
+        } while (isCombinationInRecetas(combination));
+        return combination;
+    }
+
+    // Generate a random combination and display it
+    document.getElementById('generate-random').addEventListener('click', () => {
+        const randomCombination = generateValidRandomCombination();
         selectedIngredients = randomCombination;
 
         // Display the modal with random ingredients
