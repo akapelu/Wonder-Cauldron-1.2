@@ -55,8 +55,7 @@ h1 {
     margin: 10px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para los botones de selección de ingredientes */
+    transition: border-color 0.3s; /* Solo transición para el color del borde */
 }
 
 #ingredient-buttons img.selected {
