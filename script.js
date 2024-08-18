@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = document.createElement('img');
         img.src = `images/${ingr}.png`;
         img.alt = ingr;
-        img.classList.add('ingredient'); // Added class for styling
         img.addEventListener('click', () => toggleIngredient(ingr));
         ingredientButtons.appendChild(img);
     });
@@ -155,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                    <p>Skill: ${creatureSkill}</p>`;
 
             // Display modal with creature info
-            const modal = document.getElementById('creature-modal');
+            const modal = document.getElementById('creatureModal');
             const modalContent = document.getElementById('creature-modal-content');
             modalContent.innerHTML = `<h2>Generated Creature: ${creatureName}</h2>
                                       ${creatureImg}
@@ -169,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
     const filteredIngredients = ingredients.filter(ingr => !excludedIngredients.includes(ingr));
-
+    
     // Function to generate a combination of 4 unique ingredients
     function generateRandomCombination() {
         let randomCombination = [];
@@ -203,10 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('generate-random').addEventListener('click', () => {
         const randomCombination = generateValidRandomCombination();
         selectedIngredients = randomCombination;
-        updateSelectedIngredients(); // Ensure UI is updated
 
         // Display the modal with random ingredients
-        const modal = document.getElementById('random-modal');
+        const modal = document.getElementById('randomModal');
         const randomIngredientsDiv = document.getElementById('random-ingredients');
         randomIngredientsDiv.innerHTML = '';
 
@@ -214,41 +212,46 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = `images/${ingr}.png`;
             img.alt = ingr;
-            img.classList.add('ingredient'); // Added class for styling
             randomIngredientsDiv.appendChild(img);
         });
 
         modal.style.display = "block";
     });
 
-    // Close modals and reset program
-    function closeModal(modalId) {
-        const modal = document.getElementById(modalId);
+    // Close the modal and reset program
+    document.querySelector('.close').addEventListener('click', () => {
+        const modal = document.getElementById('randomModal');
         modal.style.display = "none";
-        if (modalId === 'random-modal') {
-            resetProgram();
-        }
-    }
-
-    document.querySelector('.close').addEventListener('click', () => closeModal('random-modal'));
+        resetProgram();
+    });
 
     // Close modal if clicked outside of content
     window.addEventListener('click', (event) => {
-        if (event.target.matches('#random-modal, #info-skills-modal')) {
-            closeModal('random-modal');
+        const modal = document.getElementById('randomModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+            resetProgram();
         }
     });
 
     // Open the modal for creature skills info
     document.getElementById('info-skills').addEventListener('click', () => {
-        const modal = document.getElementById('info-skills-modal');
+        const modal = document.getElementById('infoSkillsModal');
         modal.style.display = "block";
     });
 
     // Close the modal for creature skills info
     document.querySelector('.close-skills').addEventListener('click', () => {
-        const modal = document.getElementById('info-skills-modal');
+        const modal = document.getElementById('infoSkillsModal');
         modal.style.display = "none";
+    });
+
+    // Close modal if clicked outside of content
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('infoSkillsModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     });
 
     // Reset all selections
@@ -258,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('creature-output').innerHTML = '';
     }
 
+    // Reset all selections
     document.getElementById('reset').addEventListener('click', () => {
         resetProgram();
     });
