@@ -96,12 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let selectedIngredients = [];
 
-     // Create ingredient buttons
+    // Create ingredient buttons
     const ingredientButtons = document.getElementById('ingredient-buttons');
     ingredients.forEach(ingr => {
         const img = document.createElement('img');
         img.src = `images/${ingr}.png`;
         img.alt = ingr;
+        img.classList.add('ingredient'); // Added class for styling
         img.addEventListener('click', () => toggleIngredient(ingr));
         ingredientButtons.appendChild(img);
     });
@@ -168,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
     const filteredIngredients = ingredients.filter(ingr => !excludedIngredients.includes(ingr));
-    
+
     // Function to generate a combination of 4 unique ingredients
     function generateRandomCombination() {
         let randomCombination = [];
@@ -202,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('generate-random').addEventListener('click', () => {
         const randomCombination = generateValidRandomCombination();
         selectedIngredients = randomCombination;
+        updateSelectedIngredients(); // Ensure UI is updated
 
         // Display the modal with random ingredients
         const modal = document.getElementById('random-modal');
@@ -212,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = `images/${ingr}.png`;
             img.alt = ingr;
+            img.classList.add('ingredient'); // Added class for styling
             randomIngredientsDiv.appendChild(img);
         });
 
@@ -222,7 +225,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal(modalId) {
         const modal = document.getElementById(modalId);
         modal.style.display = "none";
-        resetProgram();
+        if (modalId === 'random-modal') {
+            resetProgram();
+        }
     }
 
     document.querySelector('.close').addEventListener('click', () => closeModal('random-modal'));
