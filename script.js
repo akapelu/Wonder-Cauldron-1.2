@@ -49,6 +49,56 @@ document.addEventListener('DOMContentLoaded', () => {
         "Norpur_WF": ["Fenix_Flower", "Siren_Tear", "Golem_Heart", "Mandrake_Root"]
     };
 
+const creatureSkills = {
+    "Neyon TD": "“On death” Deals 20 DMG to the enemy troop in the arena with more ATK.",
+    "Neyon JK": "“On death” Gives 2 stacks of Injury to all enemies in the arena.",
+    "Neyon JT": "“On death” Gives all allied troops in the arena +10 ATK and +0HP permanently.",
+    "Neyon UR": "“On death” Gives +10 ATK and +10 HP to the allied hero.",
+    "Neyon VG": "“On death” Gives 20 SHIELD to all friendly troops in the arena until the end of the round.",
+    "Neyon VC": "“On death” Explodes and deals +30 DMG to the enemy in front.",
+    "Neyon WF": "“On Death” Heals all friendly troops in the arena and the allied hero for 20 HP.",
+    
+    "Drogdor TD": "“After combat” Deals 20 DMG to adjacent enemy troops.",
+    "Drogdor JK": "“After combat” If the enemy has a negative effect, he will do 20 DMG.",
+    "Drogdor JT": "“After combat” Reduces 20 ATK of adjacent enemy troops.",
+    "Drogdor UR": "“After combat” Gives himself +10 ATK and +10 HP.",
+    "Drogdor VG": "“After combat” Gain +20 ATK each time he attacks the enemy hero.",
+    "Drogdor VC": "“After combat” Deals 20 DMG to the enemy hero.",
+    "Drogdor WF": "“After combat” Heals adjacent friendly troops for 20 HP.",
+    
+    "Buzz TD": "“When fighting” Leaves 2 stacks of Enfeeble (troops only).",
+    "Buzz JK": "“When fighting” Every time he attacks, the enemy will receive 2 stacks of Injury.",
+    "Buzz JT": "“When fighting” Leaves 2 stacks of Soul Weaken (troops only).",
+    "Buzz UR": "“When fighting” Leaves 2 stacks of Favorite Meal.",
+    "Buzz VG": "“When combating” Heals +20 HP when hitting the enemy.",
+    "Buzz VC": "“When fighting” Leaves 2 stacks of Burn (only for heroes).",
+    "Buzz WF": "“When fighting” Every time he attacks, the enemy will receive 2 stacks of Hunter's Mark.",
+    
+    "Flitus TD": "“On entering” Causes 20 damage to the troop in front.",
+    "Flitus JK": "“On entering” Gives 3 stacks of Injury to the enemy troop on the opposite line.",
+    "Flitus JT": "“Upon entering” The next allied troop in the arena gains +20 ATK and +20 HP until the end of the round.",
+    "Flitus UR": "“Upon entering” Gives himself 2 stacks of Favorite Meal.",
+    "Flitus VG": "“Upon entering” Gives +20 ATK to the allied hero until the end of the round.",
+    "Flitus VC": "“Upon entering” Deals 40 DMG to the enemy hero.",
+    "Flitus WF": "“Upon entering” Heals the allied hero for 30 HP.",
+    
+    "Ivur TD": "“When changing” Inflicts 10 DMG to enemy troops in the same and adjacent line.",
+    "Ivur JK": "“When switching” The enemy troop on the same line will receive 3 stacks of Hunter Mark.",
+    "Ivur JT": "“When changing” Adjacent troops will gain +10 АТК and +10 HP.",
+    "Ivur UR": "“On Switch” Deals 20 DMG to adjacent allied troops and gains HP equal to the DMG dealt.",
+    "Ivur VG": "“When changing” Gain +20 ATK and +20 HP until the end of the round.",
+    "Ivur VC": "“On Switch” Deals 20 DMG to adjacent allied troops and hits the enemy hero for 20 DMG + 10 DMG per affected allied troop.",
+    "Ivur WF": "“On Switch” Heals +20 HP to adjacent allied troops and the hero.",
+    
+    "Norpur TD": "“At the start of the round” Deals 20 DMG to the enemy troop on the center line.",
+    "Norpur JK": "“At the beginning of the round” Deals 20 DMG to the strongest enemy troop.",
+    "Norpur JT": "“At the start of the round” Lowers -20 ATK to the most powerful enemy troop.",
+    "Norpur UR": "“At the start of the round” The enemy troop on the same line receives 2 stacks of Favorite Meal.",
+    "Norpur VG": "“At the start of the round” If there is an enemy troop on the same line, heal the hero for 20 HP. If not, deal 20 DMG to the enemy hero.",
+    "Norpur VC": "“At the start of the round” Gives 2 stacks of Burn to the enemy hero.",
+    "Norpur WF": "“At the start of the round” Give 20 SHIELD to our hero."
+};
+
     let selectedIngredients = [];
 
     // Create ingredient buttons
