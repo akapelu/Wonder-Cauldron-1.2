@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
     const ingredients = [
         "Elemental_Soul", "Quimeric_Essence", "Mandrake_Root", "Griffin_Feather", "Basilisc_Eye", 
         "Siren_Tear", "Golem_Heart", "Fenix_Flower", "Star_Dust", "Dragon_Scale"
@@ -49,50 +49,55 @@ document.addEventListener('DOMContentLoaded', () => {
         "Norpur_WF": ["Fenix_Flower", "Siren_Tear", "Golem_Heart", "Mandrake_Root"]
     };
 
-    const creatureSkills = {
-        "Neyon_TD": "“On death” Deals 20 DMG to the enemy troop in the arena with more ATK.",
-        "Neyon_JK": "“On death” Gives 2 stacks of Injury to all enemies in the arena.",
-        "Neyon_JT": "“On death” Gives all allied troops in the arena +10 ATK and +0HP permanently.",
-        "Neyon_UR": "“On death” Gives +10 ATK and +10 HP to the allied hero.",
-        "Neyon_VG": "“On death” Gives 20 SHIELD to all friendly troops in the arena until the end of the round.",
-        "Neyon_VC": "“On death” Explodes and deals +30 DMG to the enemy in front.",
-        "Neyon_WF": "“On Death” Heals all friendly troops in the arena and the allied hero for 20 HP.",
-        "Drogdor_TD": "“After combat” Deals 20 DMG to adjacent enemy troops.",
-        "Drogdor_JK": "“After combat” If the enemy has a negative effect, he will do 20 DMG.",
-        "Drogdor_JT": "“After combat” Reduces 20 ATK of adjacent enemy troops.",
-        "Drogdor_UR": "“After combat” Gives himself +10 ATK and +10 HP.",
-        "Drogdor_VG": "“After combat” Gain +20 ATK each time he attacks the enemy hero.",
-        "Drogdor_VC": "“After combat” Deals 20 DMG to the enemy hero.",
-        "Drogdor_WF": "“After combat” Heals adjacent friendly troops for 20 HP.",
-        "Buzz_TD": "“When fighting” Leaves 2 stacks of Enfeeble (troops only).",
-        "Buzz_JK": "“When fighting” Every time he attacks, the enemy will receive 2 stacks of Injury.",
-        "Buzz_JT": "“When fighting” Leaves 2 stacks of Soul Weaken (troops only).",
-        "Buzz_UR": "“When fighting” Leaves 2 stacks of Favorite Meal.",
-        "Buzz_VG": "“When combating” Heals +20 HP when hitting the enemy.",
-        "Buzz_VC": "“When fighting” Leaves 2 stacks of Burn (only for heroes).",
-        "Buzz_WF": "“When fighting” Every time he attacks, the enemy will receive 2 stacks of Hunter's Mark.",
-        "Flitus_TD": "“On entering” Causes 20 damage to the troop in front.",
-        "Flitus_JK": "“On entering” Gives 3 stacks of Injury to the enemy troop on the opposite line.",
-        "Flitus_JT": "“Upon entering” The next allied troop in the arena gains +20 ATK and +20 HP until the end of the round.",
-        "Flitus_UR": "“Upon entering” Gives himself 2 stacks of Favorite Meal.",
-        "Flitus_VG": "“Upon entering” Gives +20 ATK to the allied hero until the end of the round.",
-        "Flitus_VC": "“Upon entering” Deals 40 DMG to the enemy hero.",
-        "Flitus_WF": "“Upon entering” Heals the allied hero for 30 HP.",
-        "Ivur_TD": "“When changing” Inflicts 10 DMG to enemy troops in the same and adjacent line.",
-        "Ivur_JK": "“When switching” The enemy troop on the same line will receive 3 stacks of Hunter Mark.",
-        "Ivur_JT": "“When changing” Adjacent troops will gain +10 АТК and +10 HP.",
-        "Ivur_UR": "“On Switch” Deals 20 DMG to adjacent allied troops and gains HP equal to the DMG dealt.",
-        "Ivur_VG": "“When changing” Gain +20 ATK and +20 HP until the end of the round.",
-        "Ivur_VC": "“On Switch” Deals 20 DMG to adjacent allied troops and hits the enemy hero for 20 DMG + 10 DMG per affected allied troop.",
-        "Ivur_WF": "“On Switch” Heals +20 HP to adjacent allied troops and the hero.",
-        "Norpur_TD": "“At the start of the round” Deals 20 DMG to the enemy troop on the center line.",
-        "Norpur_JK": "“At the beginning of the round” Deals 20 DMG to the strongest enemy troop.",
-        "Norpur_JT": "“At the start of the round” Lowers -20 ATK to the most powerful enemy troop.",
-        "Norpur_UR": "“At the start of the round” The enemy troop on the same line receives 2 stacks of Favorite Meal.",
-        "Norpur_VG": "“At the start of the round” If there is an enemy troop on the same line, heal the hero for 20 HP. If not, deal 20 DMG to the enemy hero.",
-        "Norpur_VC": "“At the start of the round” Gives 2 stacks of Burn to the enemy hero.",
-        "Norpur_WF": "“At the start of the round” Give 20 SHIELD to our hero."
-    };
+const creatureSkills = {
+    "Neyon_TD": "“On death” Deals 20 DMG to the enemy troop in the arena with more ATK.",
+    "Neyon_JK": "“On death” Gives 2 stacks of Injury to all enemies in the arena.",
+    "Neyon_JT": "“On death” Gives all allied troops in the arena +10 ATK and +0HP permanently.",
+    "Neyon_UR": "“On death” Gives +10 ATK and +10 HP to the allied hero.",
+    "Neyon_VG": "“On death” Gives 20 SHIELD to all friendly troops in the arena until the end of the round.",
+    "Neyon_VC": "“On death” Explodes and deals +30 DMG to the enemy in front.",
+    "Neyon_WF": "“On Death” Heals all friendly troops in the arena and the allied hero for 20 HP.",
+    
+    "Drogdor_TD": "“After combat” Deals 20 DMG to adjacent enemy troops.",
+    "Drogdor_JK": "“After combat” If the enemy has a negative effect, he will do 20 DMG.",
+    "Drogdor_JT": "“After combat” Reduces 20 ATK of adjacent enemy troops.",
+    "Drogdor_UR": "“After combat” Gives himself +10 ATK and +10 HP.",
+    "Drogdor_VG": "“After combat” Gain +20 ATK each time he attacks the enemy hero.",
+    "Drogdor_VC": "“After combat” Deals 20 DMG to the enemy hero.",
+    "Drogdor_WF": "“After combat” Heals adjacent friendly troops for 20 HP.",
+    
+    "Buzz_TD": "“When fighting” Leaves 2 stacks of Enfeeble (troops only).",
+    "Buzz_JK": "“When fighting” Every time he attacks, the enemy will receive 2 stacks of Injury.",
+    "Buzz_JT": "“When fighting” Leaves 2 stacks of Soul Weaken (troops only).",
+    "Buzz_UR": "“When fighting” Leaves 2 stacks of Favorite Meal.",
+    "Buzz_VG": "“When combating” Heals +20 HP when hitting the enemy.",
+    "Buzz_VC": "“When fighting” Leaves 2 stacks of Burn (only for heroes).",
+    "Buzz_WF": "“When fighting” Every time he attacks, the enemy will receive 2 stacks of Hunter's Mark.",
+    
+    "Flitus_TD": "“On entering” Causes 20 damage to the troop in front.",
+    "Flitus_JK": "“On entering” Gives 3 stacks of Injury to the enemy troop on the opposite line.",
+    "Flitus_JT": "“Upon entering” The next allied troop in the arena gains +20 ATK and +20 HP until the end of the round.",
+    "Flitus_UR": "“Upon entering” Gives himself 2 stacks of Favorite Meal.",
+    "Flitus_VG": "“Upon entering” Gives +20 ATK to the allied hero until the end of the round.",
+    "Flitus_VC": "“Upon entering” Deals 40 DMG to the enemy hero.",
+    "Flitus_WF": "“Upon entering” Heals the allied hero for 30 HP.",
+    
+    "Ivur_TD": "“When changing” Inflicts 10 DMG to enemy troops in the same and adjacent line.",
+    "Ivur_JK": "“When switching” The enemy troop on the same line will receive 3 stacks of Hunter Mark.",
+    "Ivur_JT": "“When changing” Adjacent troops will gain +10 АТК and +10 HP.",
+    "Ivur_UR": "“On Switch” Deals 20 DMG to adjacent allied troops and gains HP equal to the DMG dealt.",
+    "Ivur_VG": "“When changing” Gain +20 ATK and +20 HP until the end of the round.",
+    "Ivur_VC": "“On Switch” Deals 20 DMG to adjacent allied troops and hits the enemy hero for 20 DMG + 10 DMG per affected allied troop.",
+    "Ivur_WF": "“On Switch” Heals +20 HP to adjacent allied troops and the hero.",
+    
+    "Norpur_TD": "“At the start of the round” Deals 20 DMG to the enemy troop on the center line.",
+    "Norpur_JK": "“At the beginning of the round” Deals 20 DMG to the strongest enemy troop.",
+    "Norpur_JT": "“At the start of the round” Lowers -20 ATK to the most powerful enemy troop.",
+    "Norpur_UR": "“At the start of the round” The enemy troop on the same line receives 2 stacks of Favorite Meal.",
+    "Norpur_VG": "“At the start of the round” If there is an enemy troop on the same line, heal the hero for 20 HP. If not, deal 20 DMG to the enemy hero.",
+    "Norpur_VC": "“At the start of the round” Gives 2 stacks of Burn to the enemy hero.",
+    "Norpur_WF": "“At the start of the round” Give 20 SHIELD to our hero."
+};
 
     let selectedIngredients = [];
 
@@ -152,18 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
             outputDiv.innerHTML = `<h2>Generated Creature: ${creatureName}</h2>
                                    ${creatureImg}
                                    <p>Skill: ${creatureSkill}</p>`;
-
-            // Display modal with creature info
-            const modal = document.getElementById('creatureModal');
-            const modalContent = document.getElementById('creature-modal-content');
-            modalContent.innerHTML = `<h2>Generated Creature: ${creatureName}</h2>
-                                      ${creatureImg}
-                                      <p>Skill: ${creatureSkill}</p>`;
-            modal.style.display = "block";
         } else {
             outputDiv.innerHTML = `<p>The combination of ingredients you have chosen does not belong to any recipe. 
             Using them will spawn a random Drogdor or Neyon.</p>`;
         }
+         
     });
 
     const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
@@ -232,27 +230,27 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = "none";
             resetProgram();
         }
-    });
+     });
+    
+    // Abrir el modal de Info Skills
+document.getElementById('info-skills').addEventListener('click', () => {
+    const modal = document.getElementById('infoSkillsModal');
+    modal.style.display = "block";
+});
 
-    // Open the modal for creature skills info
-    document.getElementById('info-skills').addEventListener('click', () => {
-        const modal = document.getElementById('infoSkillsModal');
-        modal.style.display = "block";
-    });
+// Cerrar el modal cuando se haga clic en la "X"
+document.querySelector('.close-skills').addEventListener('click', () => {
+    const modal = document.getElementById('infoSkillsModal');
+    modal.style.display = "none";
+});
 
-    // Close the modal for creature skills info
-    document.querySelector('.close-skills').addEventListener('click', () => {
-        const modal = document.getElementById('infoSkillsModal');
+// Cerrar el modal cuando se haga clic fuera del contenido del modal
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('infoSkillsModal');
+    if (event.target == modal) {
         modal.style.display = "none";
-    });
-
-    // Close modal if clicked outside of content
-    window.addEventListener('click', (event) => {
-        const modal = document.getElementById('infoSkillsModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
+    }
+});
 
     // Reset all selections
     function resetProgram() {
