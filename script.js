@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const ingredients = [
         "Elemental_Soul", "Quimeric_Essence", "Mandrake_Root", "Griffin_Feather", "Basilisc_Eye", 
@@ -116,15 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredIngredients = ingredients.filter(ingr => !excludedIngredients.includes(ingr));
 
         let randomCombination = [];
-        while (randomCombination.length < 4) {
-            const randomIngr = filteredIngredients[Math.floor(Math.random() * filteredIngredients.length)];
-            if (!randomCombination.includes(randomIngr)) {
-                randomCombination.push(randomIngr);
+        do {
+            randomCombination = [];
+            while (randomCombination.length < 4) {
+                const randomIngr = filteredIngredients[Math.floor(Math.random() * filteredIngredients.length)];
+                if (!randomCombination.includes(randomIngr)) {
+                    randomCombination.push(randomIngr);
+                }
             }
-        }
+        } while (Object.values(recetasCriaturas).some(receta => 
+            receta.sort().toString() === randomCombination.sort().toString()
+        ));
 
         selectedIngredients = randomCombination;
-       
 
         // Display the modal with random ingredients
         const modal = document.getElementById('randomModal');
