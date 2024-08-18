@@ -18,6 +18,23 @@
     <ul id="selected-ingredients"></ul>
     <button id="generate-creature">Generate Creature</button>
     <button id="generate-random">Generate Random Combination</button>
+    
+    <button id="info-skills">Info Skills</button>
+
+<!-- Modal para Info Skills -->
+<div id="infoSkillsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-skills">&times;</span>
+        <h3><strong>SKILLS:</strong></h3>
+        <p><strong>Favorite Meal (FM):</strong> A troop with FM stacks will give buffs to the troop it kills. 1 stack: 10 HP. 2 stacks: 10 ATK 10 HP. 3 stacks: 10 ATK 20 HP. 4 stacks: 10 ATK 20 HP.</p>
+        <p><strong>Injury:</strong> On 5 or more stacks, explodes for 10 DMG per stack consumed. If you move a troop from their line, it will trigger Injury stacks dealing damage to them.</p>
+        <p><strong>Hunter mark:</strong> The next attack (not ability) that a troop with Hunter Mark receives will have extra damage equivalent to the number of stacks.</p>
+        <p><strong>Soul Weaken:</strong> Reduces the skill value. 1 stack: -10 to skill. 2 stacks: -20 to skill. 3 stacks: -30 to skill.</p>
+        <p><strong>Enfeeble:</strong> Permanently reduces the ATK of the affected troop. 1 stack: -10 ATK. 2 stacks: -20 ATK. 3 stacks: -30 ATK.</p>
+        <p><strong>Burn:</strong> At the end of the round, consumes 1 stack and deals 10 DMG.</p>
+    </div>
+</div>
+    
     <button id="reset">Reset</button>
     <div id="creature-output"></div>
 
