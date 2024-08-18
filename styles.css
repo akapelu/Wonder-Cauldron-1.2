@@ -172,6 +172,12 @@ button:hover {
     font-weight: bold;
 }
 
+#creature-skill {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
 .close-skills:hover,
 .close-skills:focus {
     color: black;
