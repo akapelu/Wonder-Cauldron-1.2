@@ -55,7 +55,7 @@ h1 {
     margin: 10px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para los botones de selección de ingredientes */
 }
 
@@ -63,32 +63,7 @@ h1 {
     border-color: #007bff;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 5px 0;
-    font-weight: bold;
-}
-
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para los botones generales */
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
+/* Estilo para el resultado del creature */
 #creature-output {
     margin-top: 20px;
 }
@@ -102,7 +77,7 @@ button:hover {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -118,7 +93,9 @@ button:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Ancho máximo del modal */
     text-align: center;
+    border-radius: 10px; /* Esquinas redondeadas */
 }
 
 /* Close button */
@@ -156,21 +133,8 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón de Info Skills */
 }
 
-/* Estilo del modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Permite scroll si el contenido es demasiado grande */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-}
-
-/* Contenido del modal */
-.modal-content {
+/* Estilo del modal para Info Skills */
+#info-skills-modal .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* Centra el modal */
     padding: 20px;
@@ -180,18 +144,18 @@ button:hover {
     border-radius: 10px; /* Esquinas redondeadas */
 }
 
-/* Botón de cierre */
+#creature-skill {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Botón de cierre para Info Skills */
 .close-skills {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
-#creature-skill {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
 }
 
 .close-skills:hover,
