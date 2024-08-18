@@ -9,6 +9,14 @@ body {
 h1 {
     color: #333;
 }
+
+#logo-web {
+    width: 200px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene la proporción del logo */
+    display: block;
+    margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
 /* CSS: Estilos para el contenedor de ingredientes seleccionados */
 #selected-ingredients-container {
     background-color: #FFDAB9; /* Color naranja claro (Peach Puff) */
