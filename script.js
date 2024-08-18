@@ -161,10 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = "block";
     });
 
-    // Close the modal
+    // Close the modal and reset program
     document.querySelector('.close').addEventListener('click', () => {
         const modal = document.getElementById('randomModal');
         modal.style.display = "none";
+        resetProgram();
     });
 
     // Close modal if clicked outside of content
@@ -172,13 +173,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = document.getElementById('randomModal');
         if (event.target == modal) {
             modal.style.display = "none";
+            resetProgram();
         }
-    });
+     });
 
     // Reset all selections
-    document.getElementById('reset').addEventListener('click', () => {
+    function resetProgram() {
         selectedIngredients = [];
         updateSelectedIngredients();
         document.getElementById('creature-output').innerHTML = '';
+    }
+
+    // Reset all selections
+    document.getElementById('reset').addEventListener('click', () => {
+        resetProgram();
     });
 });
