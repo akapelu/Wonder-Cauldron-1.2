@@ -11,7 +11,7 @@ h1 {
 }
 
 #logo-web {
-    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    width: 200px; /* Ajusta el tamaño del logo según sea necesario */
     height: auto; /* Mantiene la proporción del logo */
     display: block;
     margin: 0 auto; /* Centra el logo horizontalmente */
