@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let selectedIngredients = [];
 
-    // Create ingredient buttons
+     // Create ingredient buttons
     const ingredientButtons = document.getElementById('ingredient-buttons');
     ingredients.forEach(ingr => {
         const img = document.createElement('img');
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                    <p>Skill: ${creatureSkill}</p>`;
 
             // Display modal with creature info
-            const modal = document.getElementById('creatureModal');
+            const modal = document.getElementById('creature-modal');
             const modalContent = document.getElementById('creature-modal-content');
             modalContent.innerHTML = `<h2>Generated Creature: ${creatureName}</h2>
                                       ${creatureImg}
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedIngredients = randomCombination;
 
         // Display the modal with random ingredients
-        const modal = document.getElementById('randomModal');
+        const modal = document.getElementById('random-modal');
         const randomIngredientsDiv = document.getElementById('random-ingredients');
         randomIngredientsDiv.innerHTML = '';
 
@@ -218,40 +218,32 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = "block";
     });
 
-    // Close the modal and reset program
-    document.querySelector('.close').addEventListener('click', () => {
-        const modal = document.getElementById('randomModal');
+    // Close modals and reset program
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
         modal.style.display = "none";
         resetProgram();
-    });
+    }
+
+    document.querySelector('.close').addEventListener('click', () => closeModal('random-modal'));
 
     // Close modal if clicked outside of content
     window.addEventListener('click', (event) => {
-        const modal = document.getElementById('randomModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
-            resetProgram();
+        if (event.target.matches('#random-modal, #info-skills-modal')) {
+            closeModal('random-modal');
         }
     });
 
     // Open the modal for creature skills info
     document.getElementById('info-skills').addEventListener('click', () => {
-        const modal = document.getElementById('infoSkillsModal');
+        const modal = document.getElementById('info-skills-modal');
         modal.style.display = "block";
     });
 
     // Close the modal for creature skills info
     document.querySelector('.close-skills').addEventListener('click', () => {
-        const modal = document.getElementById('infoSkillsModal');
+        const modal = document.getElementById('info-skills-modal');
         modal.style.display = "none";
-    });
-
-    // Close modal if clicked outside of content
-    window.addEventListener('click', (event) => {
-        const modal = document.getElementById('infoSkillsModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
     });
 
     // Reset all selections
@@ -261,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('creature-output').innerHTML = '';
     }
 
-    // Reset all selections
     document.getElementById('reset').addEventListener('click', () => {
         resetProgram();
     });
