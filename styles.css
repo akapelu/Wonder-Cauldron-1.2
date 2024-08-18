@@ -48,6 +48,7 @@ h1 {
     margin-bottom: 5px; /* Espacio entre elementos de la lista */
     color: #333; /* Color del texto de los ingredientes opcional */
 }
+
 #ingredient-buttons img {
     width: 100px;
     height: 100px;
@@ -55,6 +56,7 @@ h1 {
     cursor: pointer;
     border: 2px solid transparent;
     transition: border-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para los botones de selección de ingredientes */
 }
 
 #ingredient-buttons img.selected {
@@ -80,6 +82,7 @@ button {
     background-color: #007bff;
     color: white;
     transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para los botones generales */
 }
 
 button:hover {
@@ -150,6 +153,7 @@ button:hover {
     color: white;
     border: none;
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón de Info Skills */
 }
 
 /* Estilo del modal */
