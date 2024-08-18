@@ -46,7 +46,7 @@ h1 {
 #selected-ingredients li {
     list-style-type: none; /* Eliminar viñetas */
     margin-bottom: 5px; /* Espacio entre elementos de la lista */
-    color: #4B2B58; /* Color del texto de los ingredientes opcional */
+    color: #4A2450; /* Color del texto de los ingredientes opcional */
 }
 
 #ingredient-buttons img {
