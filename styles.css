@@ -201,7 +201,7 @@ button:hover {
 
 /* Estilo para la imagen de la criatura en el pop-up */
 #creature-info-modal .modal-content img {
-    max-width: 70%; /* Reducir la imagen de la criatura al 60% del tamaño original */
+    max-width: 40%; /* Reducir la imagen de la criatura al 60% del tamaño original */
     height: auto; /* Mantener la proporción de la imagen */
 }
 
@@ -214,12 +214,12 @@ button:hover {
 
 /* Ajusta el tamaño del cuadro de selección */
 #creature-select {
-    width: 180px; /* Ajusta el ancho según tus necesidades */
-    height: 60px; /* Ajusta la altura según tus necesidades */
-    font-size: 40px; /* Tamaño de la fuente dentro del cuadro de selección */
+    width: 120px; /* Ajusta el ancho según tus necesidades */
+    height: 40px; /* Ajusta la altura según tus necesidades */
+    font-size: 28px; /* Tamaño de la fuente dentro del cuadro de selección */
 }
 
 /* Aumenta el tamaño de la fuente del texto dentro del cuadro de selección */
 #creature-select option {
-    font-size: 40px; /* Tamaño de la fuente dentro de las opciones */
+    font-size: 28px; /* Tamaño de la fuente dentro de las opciones */
 }
