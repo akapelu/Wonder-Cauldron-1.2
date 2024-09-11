@@ -140,28 +140,47 @@ const creatureSkills = {
             }
         });
     }
+// Variables para el modal
+    const modal = document.getElementById('creature-modal');
+    const closeButton = document.querySelector('.close-button');
+    const outputDiv = document.getElementById('creature-output');
 
+    function showModal(content) {
+        outputDiv.innerHTML = content;
+        modal.style.display = 'block';
+    }
+
+    function hideModal() {
+        modal.style.display = 'none';
+    }
+
+    closeButton.addEventListener('click', hideModal);
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            hideModal();
+        }
+    });
     // Generate creature based on selected ingredients
-    document.getElementById('generate-creature').addEventListener('click', () => {
+document.getElementById('generate-creature').addEventListener('click', () => {
         const selectedSet = new Set(selectedIngredients);
         const creature = Object.keys(recetasCriaturas).find(criatura =>
             recetasCriaturas[criatura].every(ingr => selectedSet.has(ingr)) &&
             recetasCriaturas[criatura].length === selectedSet.size
         );
 
-        const outputDiv = document.getElementById('creature-output');
         if (creature) {
             const creatureName = creature.replace(/_/g, ' ');
             const creatureImg = `<img src="images/${creature}.png" alt="${creatureName}">`;
             const creatureSkill = creatureSkills[creature];
-            outputDiv.innerHTML = `<h2>Generated Creature: ${creatureName}</h2>
-                                   ${creatureImg}
-                                   <p>Skill: ${creatureSkill}</p>`;
+            const content = `<h2>Generated Creature: ${creatureName}</h2>
+                             ${creatureImg}
+                             <p>Skill: ${creatureSkill}</p>`;
+            showModal(content);
         } else {
-            outputDiv.innerHTML = `<p>The combination of ingredients you have chosen does not belong to any recipe. 
+            const content = `<p>The combination of ingredients you have chosen does not belong to any recipe. 
             Using them will spawn a random Drogdor or Neyon.</p>`;
+            showModal(content);
         }
-         
     });
 
     const excludedIngredients = ["Fenix_Flower", "Star_Dust", "Dragon_Scale"];
@@ -264,3 +283,19 @@ window.addEventListener('click', (event) => {
         resetProgram();
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

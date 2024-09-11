@@ -23,23 +23,20 @@ h1 {
 
 /* CSS: Estilos para el contenedor de ingredientes seleccionados */
 #selected-ingredients-container {
-    background-color: #007D51; /* Color fondo cuadro ingredientes */
+    display: none; /* Oculta el contenedor */
     padding: 20px; /* Espacio interno para separar el contenido del borde */
     margin-top: 20px; /* Espacio superior para separar del resto del contenido */
-    border-radius: 8px; /* Esquinas redondeadas opcional */
-    border: 1px solid #00F896; /* Borde opcional para destacar */
+    border: none; /* Elimina el borde */
 }
 
 /* Estilo para el título de los ingredientes seleccionados */
 #selected-ingredients-title {
-    font-weight: bold; /* Hacer el texto en negrita */
-    margin-bottom: 10px; /* Espacio entre el título y la lista */
-    color: #2E083A; /* Color del texto del título opcional */
+    display: none; /* Oculta el título */
 }
 
 /* Estilo para la lista de ingredientes seleccionados */
 #selected-ingredients {
-    margin-top: 10px; /* Espacio superior opcional para la lista */
+    display: none; /* Oculta la lista */
 }
 
 /* Estilos opcionales para la lista */
@@ -119,6 +116,7 @@ button:hover {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
     text-align: center;
+    border-radius: 10px; /* Esquinas redondeadas opcional */
 }
 
 /* Close button */
@@ -156,7 +154,7 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón de Info Skills */
 }
 
-/* Estilo del modal */
+/* Estilo del modal de Info Skills */
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed; /* Fijo en la pantalla */
@@ -169,7 +167,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
 }
 
-/* Contenido del modal */
+/* Contenido del modal de Info Skills */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* Centra el modal */
@@ -180,18 +178,12 @@ button:hover {
     border-radius: 10px; /* Esquinas redondeadas */
 }
 
-/* Botón de cierre */
+/* Botón de cierre del modal de Info Skills */
 .close-skills {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
-#creature-skill {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
 }
 
 .close-skills:hover,
@@ -200,3 +192,10 @@ button:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+#creature-skill {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
