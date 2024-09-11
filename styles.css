@@ -214,7 +214,7 @@ button:hover {
 
 /* Ajusta el tamaño del cuadro de selección */
 #creature-select {
-    width: 150px; /* Ajusta el ancho según tus necesidades */
+    width: 180px; /* Ajusta el ancho según tus necesidades */
     height: 22px; /* Ajusta la altura según tus necesidades */
     font-size: 20px; /* Tamaño de la fuente dentro del cuadro de selección */
 }
