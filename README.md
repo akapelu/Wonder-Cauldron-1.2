@@ -6,5 +6,6 @@ and this application will be used to make life easier for players who want to cr
 
 Releases:
 
-Version 1.0 "Alpha version"
-Version 1.1 "Added the creatures generated in a pop up and eliminate green chart with ingredients selected listed"
+- Version 1.0 "Alpha version"
+- Version 1.1 "Added the creatures generated in a pop up and eliminate green chart with ingredients selected listed"
+  
