@@ -8,4 +8,5 @@ Releases:
 
 - Version 1.0 "Alpha version"
 - Version 1.1 "Added the creatures generated in a pop up and eliminate green chart with ingredients selected listed"
+- Version 1.2 "Added a selection chart where you can choose any creatura and generate a pop up with info about that creature included the recipe, also a message if you dont select 4 ingredients"
   
